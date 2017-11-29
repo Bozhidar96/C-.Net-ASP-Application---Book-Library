@@ -1,0 +1,17 @@
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\BLC-Data.dll.config
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\BLC-Data.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\BLC-Data.pdb
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\EntityFramework.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\PagedList.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\PagedList.Mvc.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\EntityFramework.xml
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\PagedList.xml
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\bin\Debug\PagedList.Mvc.xml
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC-Data.csprojResolveAssemblyReference.cache
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC-Data.csproj.CoreCompileInputs.cache
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC-Data.dll
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC-Data.pdb
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC_Data.Migrations.Library.resources
+D:\C# programming\CatalogBooksAspNetCsharpProject\BookLibary\BLC-Data\obj\Debug\BLC-Data.csproj.GenerateResource.Cache

@@ -1,0 +1,103 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IEnumerable<BLC_Data.Entities.Book>
+
+@{
+    ViewBag.Title = "Book Catalog";
+}
+
+<h2>Welcome to Book Catalog! Enjoy :)</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<hr/>
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm())
+    {
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                    @Html.TextBox("titleSearch", (string)ViewBag.TitleSearch, new { @class = "form-control", placeholder = "Title" })
+                </div>
+                <div class="col-md-2">
+                    @Html.TextBox("authorSearch", (string)ViewBag.AuthorSearch, new { @class = "form-control", placeholder = "Author" })
+                </div>
+                <div class="col-md-2">
+                    @Html.DropDownList("genreSearch", (IEnumerable<SelectListItem>)ViewBag.GenreSearch, " ", new { @class = "form-control" })
+                </div>
+           
+        
+                <div class="col-md-2">
+                    <button class="btn btn-primary">
+                        <i class="glyphicon glyphicon-search"></i> Search
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-2" style="height: 50px;"></div>
+
+    }
+}
+
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.ActionLink("Author", "Index", new { sortOrder = ViewBag.AuthorSortParm, Search = ViewBag.Search })
+        </th>
+        <th>
+            @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TitleSortParm, Search = ViewBag.Search })
+        </th>
+        <th>
+            @Html.ActionLink("Genre","Index", new { sortOrder = ViewBag.GenreSortParm, Search = ViewBag.Search })
+        </th>
+        
+        <th>
+            @Html.ActionLink("Release Data", "Index", new { sortOrder = ViewBag.ReleaseDataSortParm, Search = ViewBag.Search })
+        </th>
+        <th>
+            @Html.ActionLink("Description", "Index", new { sortOrder = ViewBag.DescriptionSortParm, Search = ViewBag.Search })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre.GenreName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReleaseDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <td>
+            @if (User.IsInRole("Admin"))
+            {
+                <a class="btn btn-primary btn-xs" href="@Url.Action("Edit", "Books", new { id = item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            }
+                <a class="btn btn-success btn-xs" href="@Url.Action("Details", "Books", new { id=item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-eye-open"></i> Details</a>
+             @if (User.IsInRole("Admin"))
+             {
+                <a class="btn btn-danger btn-xs" href="@Url.Action("Delete", "Books", new { id = item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+             }
+            </td>
+        }
+    </tr>
+}
+
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page, titleSearch = ViewBag.TitleSearch, sortOrder = ViewBag.CurrentSortParm }))

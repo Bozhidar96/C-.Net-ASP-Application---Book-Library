@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BLC_Data.Entities.Author>
+
+@{
+    ViewBag.Title = "Authors";
+}
+
+<h2>Create new authors</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            <a class="btn btn-primary btn-xs" href="@Url.Action("Edit", "Books", new { id=item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+            <a class="btn btn-success btn-xs" href="@Url.Action("Details", "Books", new { id=item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-eye-open"></i> Details</a>
+            <a class="btn btn-danger btn-xs" href="@Url.Action("Delete", "Books", new { id=item.Id })" style="border-radius: 10px;" role="button"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

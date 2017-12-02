@@ -1,0 +1,22 @@
+(EN)
+1. In this project you can:
+ ( if you are login like admin -> email: darko@abv.bg password: _Darkon4ety )
+ 
+    - Create new books
+    - Create new authors
+    - Create new genres  
+
+    •	If you do your own registration, you will only have access to the book and search inputs in it, and book details.
+    •	You can sort ASD or DESC at ‘Title’, ‘Author’, ‘Release Date’, ‘Genre’ and ‘Description’
+
+2. Other:
+  - if you are login like admin, when you create new Books characters which you can write in input fields is limited:
+    •	Book.Name – characters between 1 and 300.
+    •	Book.Discription – characters between 1 and 500.
+
+  - if you are login like admin, when you create new Authors characters which you can write in input fields is limited:
+    •	Author.FirstName – characters between 1 and 200.
+    •	Author.LastName – characters between 1 and 200.
+    
+  - if you are login like admin, when you create new Genre characters which you can write in input fields is limited:
+    •	Genre.GenreName – characters between 1 and 100.
